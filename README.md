@@ -16,3 +16,7 @@ _createDIRwithMD.sh_ enables you to select a directory, then create folders & in
 * can do unlimited folders/files within that directory, one at a time (doing multiple is an easy fix, but I didn't think of it 'til now)
 * adds a best guess at a title and a slug within the web/ directory, and tags based on the path and "needs content"
 * adds generic headings. Edit to your liking
+
+_startFresh.sh_ updates upstream 
+* edit the list of repos in your project
+* run at the start of every work session to update all your repos to the current upstream
