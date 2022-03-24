@@ -16,10 +16,10 @@ Then you pass the token in like this:
 
 ## data
 
-This contains data scraped from GitHub using the `query` script ("prs.json") and another data file called "organizations.json".
+This contains a data file called "organizations.json".
 
 The "organizations.json" file contains an object each of whose keys represents an organization. The key is the organization name. Each organization object lists the GitHub usernames for people in that organization for each month we are interested in.
 
 ## analyse
 
-This contains a script that figures out, month by month, which PRs were files by members of a particular organization listed in "organizations.json".
+This contains a script that figures out, month by month, which PRs were files by members of a particular organization listed in "organizations.json". Note that it expects to see "prs.json" in "data", but that file is not checked into GitHub because it's too big. You'll need to get your own copy of that.
