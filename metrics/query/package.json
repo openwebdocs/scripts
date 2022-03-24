@@ -1,0 +1,10 @@
+{
+  "name": "openwebdocs/metrics/query",
+  "version": "0.0.1",
+  "repository": "https://github.com/openwebdocs/scripts/",
+  "license": "MPL-2.0",
+  "author": "Open Web Docs",
+  "dependencies": {
+    "node-fetch": "^2.6.7"
+  }
+}
