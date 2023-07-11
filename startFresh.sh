@@ -5,30 +5,21 @@ echo "-------- Update all repos! --------------"
 # Edit these directories with the ones you want to update
 repositories=('bob' 
   'browser-compat-data' 
-  'content'
   'css-examples'
   'infra'
   'interactive-examples'
   'kuma'
-  'kumascript'
   'learning-area'
   'mdn-dinocons'
   'mdn-minimalist'
   'yari'
 );
 
-# repos that have 'main' branch (rather than 'master')
-mainBranch=(
-  'content'
-  'mdn-dinocons'
-  'yari'
-  'mdn-minimalist' 
-)
-
 # Edit this to your parent directory's path
 SYSTEM_DIR=~/owd
 
-branch=''
+branch='main'
+origin='origin'
 path=''
 
 for i in "${repositories[@]}"
@@ -36,17 +27,20 @@ for i in "${repositories[@]}"
     path="${SYSTEM_DIR}/$i"
     cd ${path}
 
-    #check if the repo has a default 'main branch'
-    if [[ ${mainBranch[*]} =~ $i ]]
+    #content has different origing
+    if [[ i == content ]]
       then 
-        branch='main'
+        origin='mdn'
       else
-        branch='master'
+        origin='origin'
     fi
-    
+
+    echo "- - - - - - - - - "
+    echo "respository: " ${i}
     echo "branch: " ${branch}
     git fetch upstream
     git checkout ${branch}
+    git pull ${origin} ${branch}
     git merge upstream/${branch}
     git push origin ${branch}
 
