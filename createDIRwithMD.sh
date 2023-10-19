@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # START ----------------------------
 #
@@ -26,7 +26,7 @@ goToCorrectDirectory () {
 
   path="${SYSTEM_DIR}${REPO_PATH}${sub_path}"
 
-  cd ${path}
+  cd "${path}"
   echo "Selected Directory:"
   pwd
   echo "Is that correct? (y/n/x for exit)"
@@ -50,9 +50,9 @@ createDocuments () {
     echo "Sorry, that folder already exists. Try again."
     createDocuments
   else
-    mkdir ${newFileName}
+    mkdir "${newFileName}"
     # create an index.md in that folder
-    touch ${newFileName}/index.md
+    touch "${newFileName}/index.md"
     addContent  
   fi
 # Ask user to enter a new folder name or exit?
@@ -82,7 +82,7 @@ addContent () {
   export usefulFileName=${newFileName//_/ }
   export sectionTitle=(${words[${length}-2]//_// })
 
-  cat > ${newFileName}/index.md <<- EOM
+  cat > "${newFileName}/index.md" <<- EOM
 ---
 title: '${sectionTitle}: ${usefulFileName}'
 slug: Web${sub_path}/${newFileName}
