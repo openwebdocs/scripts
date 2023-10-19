@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
  
 # run after fetching upstream
 # ~/scripts/startFresh.sh

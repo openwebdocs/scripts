@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 clear
 echo "-------- Update all repos! --------------"
 
@@ -25,7 +25,7 @@ path=''
 for i in "${repositories[@]}"
   do
     path="${SYSTEM_DIR}/$i"
-    cd ${path}
+    cd "${path}"
 
     #content has different origing
     if [[ i == content ]]

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 clear
 echo "-------- Add remote origin for all directories --------------"
 
@@ -27,9 +27,9 @@ ORGANIZATION="mdn"
 for i in "${repositories[@]}"
 do
   echo "git remote add upstream https://github.com/${ORGANIZATION}/$i.git"
-  cd ${SYSTEM_DIR}/$i 
+  cd "${SYSTEM_DIR}/$i"
   git branch
-  git remote add upstream https://github.com/${ORGANIZATION}/$i.git
+  git remote add upstream "https://github.com/${ORGANIZATION}/$i.git"
 done
 
 
